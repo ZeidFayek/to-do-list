@@ -1,0 +1,39 @@
+.loginForm {
+    margin: 15px;
+    width: 35%;
+    margin: auto;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 25px;
+    margin-top: 15px;
+}
+
+.loginForm .emailsLink h6 {
+    font-weight: 700;
+    margin: 20px 0px;
+}
+
+.loginForm input {
+    background-color: transparent;
+    margin: 18px 0px;
+}
+
+.loginForm .form-control input {
+    color: #ffff;
+}
+
+.loginForm .bg-warning {
+    color: #ffff;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:1024px) {
+    .loginForm{
+        width: 50%;
+    }
+}
+@media screen and (max-width:860px) {
+    .loginForm{
+        width: 70%;
+    }
+}

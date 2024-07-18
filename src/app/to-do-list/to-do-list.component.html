@@ -1,0 +1,62 @@
+<div class="nav col-12 d-flex justify-content-end mb-4">
+    <ul class="d-flex justify-content-around">
+        <li><a href="#"><i class="fa-solid fa-briefcase me-2"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-github me-2"></i></a></li>
+        <li><i class="fa-brands fa-facebook me-2"></i></li>
+        <li> <button type="button" class="btn btn-primary logout" (click)="logout()">Logout</button></li>
+    </ul>
+</div>
+<div class="container p-3">
+    <div class="flex justify-content-center">
+        <p-toast />
+        <p-confirmDialog #cd>
+            <ng-template pTemplate="headless" let-message>
+                <div class="flex flex-column align-items-center p-5 surface-overlay border-round">
+                    <span class="font-bold text-2xl block mb-2 mt-4">
+                        {{ message.header }}
+                    </span>
+                    <p class="mb-0">{{ message.message }}</p>
+                    <div class="flex align-items-center gap-2 mt-4">
+                        <button pButton label="Confirm" (click)="cd.accept()" class="w-8rem">
+                        </button>
+                        <button pButton label="Cancel" (click)="cd.reject()" class="p-button-outlined w-8rem ">
+                        </button>
+                    </div>
+                </div>
+            </ng-template>
+        </p-confirmDialog>
+    </div>
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="to-do-items">
+                <h1>To-Do List</h1>
+                <form [formGroup]="inputItems" class="mb-5">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" formControlName="inputItem">
+                        </div>
+                        <div class="col-lg-3">
+                            <button [disabled]="inputItems.invalid" class="form-control" (click)="addItemToLost()">Add
+                                Item</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="to-do-item-list">
+                <h3 *ngIf="!itemsContent">The List is Empty</h3>
+                <button *ngIf="itemsContent" type="button" class="btn btn-clear " (click)="confirm()">Clear All
+                    The List</button>
+                <ul class="d-flex justify-content-between border-bottom p-2 w-75 m-auto"
+                    *ngFor="let item of itemsContainer;let i=index">
+                    <li>{{i+1}}</li>
+                    <li>{{item}}</li>
+                    <li><button type="button" class="btn btn-outline-danger"
+                            (click)="deleteItemFromList(i)">Remove</button></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <img src="../assets/toDoListBg.webp" class="w-100">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="loginForm">
+    <div class="container">
+        <div class="emailsLink">
+            <h6>Sign in with:</h6>
+        </div>
+        <form (ngSubmit)="login()" [formGroup]="loginForm">
+            <div *ngIf="LoginInCorrect" class="alert alert-danger" role="alert">
+                E-mail or Password is incorrect
+              </div>
+            <input type="text" class="form-control" placeholder="Email" formControlName="email">
+            <div *ngIf="loginForm.get('email')?.errors && (loginForm.get('email')?.touched || loginForm.get('email')?.value.length>0)"
+                class="bg-warning">
+                <span *ngIf="loginForm.get('email')?.getError('reqired')">Email is reqired</span>
+                <span *ngIf="loginForm.get('email')?.getError('email')">Email is invalid</span>
+            </div>
+            <input type="password" class="form-control" placeholder="Password" formControlName="password">
+            <div *ngIf="loginForm.get('password')?.errors&&(loginForm.get('password')?.touched || loginForm.get('password')?.value.length>0)"
+                class="bg-warning">
+                <span *ngIf="loginForm.get('password')?.getError('reqired')">Password is reqired</span>
+            </div>
+            <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary w-100">SIGN IN</button>
+        </form>
+    </div>
+</div>
+

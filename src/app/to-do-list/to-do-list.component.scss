@@ -1,0 +1,65 @@
+:host ::ng-deep{
+    .surface-overlay{
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+.to-do-items h1 {
+    font-family: serif;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.to-do-items input {
+    border-radius: 0;
+}
+
+.to-do-items button {
+    border-radius: 0;
+    background-color: #0d6efd;
+    color: #ffff;
+    font-weight: 500;
+}
+
+.to-do-item-list {
+    margin: 30px 0px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    position: relative;
+}
+
+ul li {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.to-do-item-list .btn-clear {
+    background-color: rgb(213, 54, 54);
+    color: #ffff;
+    position: absolute;
+    top: -18px;
+    right: 0;
+    border-radius: 0;
+}
+
+.logout {
+    border-radius: 0;
+    display: flex;
+    align-items: end;
+    font-weight: 700;
+}
+.fa-brands,.fa-solid{
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    color: #ffff;
+}
+.nav{
+    background-color: #303338;
+    padding: 10px 10px;
+}
+@media screen and (max-width:992px) {
+    img{
+        display: none;
+    }
+}
